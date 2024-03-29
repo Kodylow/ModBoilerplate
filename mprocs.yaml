@@ -1,6 +1,6 @@
 procs:
   user:
-    shell: zsh
+    shell: bash
     stop: SIGKILL
   multispend:
     shell: bun i && bun dev

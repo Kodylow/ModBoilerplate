@@ -1,0 +1,24 @@
+hidden = [".config", "package-lock.json"]
+run = "just dev"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json"]
+
+[nix]
+channel = "stable-23_11"
+
+[unitTest]
+language = "bun"
+
+[deployment]
+run = ["sh", "-c", "just dev"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 5555
+externalPort = 3000
